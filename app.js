@@ -1,8 +1,11 @@
 var main = function () {
+    
     $('.quiz').hide();
     $('.loading').hide();
     var beginning = true;
 
+    document.getElementById("vidEntered").value = localStorage.getItem("enter");
+    
     var ytApiKey = "AIzaSyB3LFAO-suAsevvIfP4q6Zk269_j0TmXq8";
     var vidIDs = [];
     var vidTitles = [];
@@ -150,24 +153,25 @@ var main = function () {
             vidIDs[i] = youtube_parser(vidIDs[i])
             if (vidIDs[i] == false) {
                 alert("Enter valid YouTube links!");
-                break;
+                return;
             }
         }
 
         if (arrayLength < 4) {
             alert("Enter at least 4 videos!");
         } else {
+            localStorage.setItem("enter", vidEnteredList);
             setUpStartQuiz();
         }
     })
     
     $("#titleButton").click(function () {
+        document.getElementById('musicplayer').src='';
         location.reload();
     })
     
     $("#numberButton").click(function () {
         $(".numberButton").toggleClass('hideMe');            
-        document.getElementById("headertag").toggleClass('hideMyShadow');
     })
     
     function buttonPress(ind, butn) {
