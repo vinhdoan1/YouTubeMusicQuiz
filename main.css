@@ -53,12 +53,12 @@ body {
     outline: 0 none;
 }
 
-.btn-primary {
+.btn-primary, .btn-primary:focus {
     background: #737373;
     color: #ffffff;
 }
 
-.btn-primary:active, .btn-primary.active {
+.btn-primary:active, .btn-primary:hover {
     background: #595959;
     box-shadow: none;
 }
@@ -67,6 +67,11 @@ body {
 {
  background: transparent;
     border: none;
+}
+
+.submitButt
+{
+    background: #b31217
 }
 
 .titlelink:active {
@@ -83,12 +88,20 @@ padding: 5px;
 background:url('../images/cards/go.png');
 }
 
-.wrong {
-    background: #a93b1c;
+.wrong,
+.wrong:hover,
+.wrong:active,
+.wrong:visited,
+.wrong:focus {
+    background-color: #a93b1c;
 }
 
-.correct {
-    background: #6ed43a;
+.correct,
+.correct:hover,
+.correct:active,
+.correct:visited,
+.correct:focus{
+    background-color: #6ed43a;
 }
 
 .vidplayer {

@@ -160,16 +160,34 @@ var main = function () {
             setUpStartQuiz();
         }
     })
+    
+    $("#titleButton").click(function () {
+        location.reload();
+    })
 
-    function buttonPress(ind, btn) {
+    function setColor(btn, color) {
+       // var property = document.getElementById(btn);
+       // btn.property.style.backgroundColor = color;
+        //document.getElementById(btn).style.backgroundColor = color;
+        /*
+        btn.css({
+                   "background-color": color
+        });  
+        //*/
+       //  $(this).toggleClass('red');
+    }
+    
+    function buttonPress(ind, butn) {
         var rightBtn;
+        btn = $(butn);
         if (!buttonPressed) {
             //correct!
             if (ind == correctButton) {
                 rightBtn = btn;
-                btn.css({
-                    "background": '#6ed43a'
-                });
+
+                btn.addClass('correct');
+                
+                
                 // remove this vid from the list
                 vidIDsLeft.splice(chosenVidInd, 1);
 
@@ -178,8 +196,10 @@ var main = function () {
                     vidIDsLeft = vidIDs.slice();
             } else //wrong!
             {
+                
+                btn.addClass('wrong');
                 btn.css({
-                    "background": '#a93b1c'
+                   // "background": '#a93b1c'
                 });
 
                 if (correctButton == 0) {
@@ -191,9 +211,10 @@ var main = function () {
                 } else {
                     rightBtn = $("#buttonFour");
                 }
-
+                
+                rightBtn.addClass('correct');
                 rightBtn.css({
-                    "background": '#6ed43a'
+                 //   "background": '#6ed43a'
                 });
             }
 
@@ -202,12 +223,24 @@ var main = function () {
 
 
             setTimeout(function () {
+               // btn.style.backgroundColor = '#737373';
+              //  rightBtn.style.backgroundColor = '#737373';
+               // setColor(btn, '#737373');
+            //    setColor(rightBtn, '#737373');
+                
+                 btn.removeClass('correct');
+                btn.removeClass('wrong');
+                 rightBtn.removeClass('correct');
+                rightBtn.removeClass('wrong');
+                
                 btn.css({
-                    "background": '#737373'
+                  //   $(this).toggleClass("btn-active").siblings().removeClass("btn-active");
+                 //  "backgroundColor": '#737373'
                 });
 
                 rightBtn.css({
-                    "background": '#737373'
+                  //  $(this).toggleClass("btn-active").siblings().removeClass("btn-active");
+                  //  "backgroundColor": '#737373'
                 });
 
                 buttonPressed = false;
@@ -215,26 +248,29 @@ var main = function () {
 
             }, 1000);
         } else {
+             btn.removeClass('correct');
+             btn.removeClass('wrong');
+           // btn.style.backgroundColor = '#737373';
             btn.css({
-                "background": '#737373'
+               // "backgroundColor": '#737373'
             });
         }
     }
 
     $("#buttonOne").click(function () {
-        buttonPress(0, $(this))
+        buttonPress(0, this)
     })
 
     $("#buttonTwo").click(function () {
-        buttonPress(1, $(this))
+        buttonPress(1, this)
     })
 
     $("#buttonThree").click(function () {
-        buttonPress(2, $(this))
+        buttonPress(2, this)
     })
 
     $("#buttonFour").click(function () {
-        buttonPress(3, $(this))
+        buttonPress(3, this)
     })
 
 };
