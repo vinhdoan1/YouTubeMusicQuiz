@@ -48,6 +48,7 @@ body {
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
+    margin: 10px;
 }
 .btn:focus, .btn:active:focus, .btn.active:focus {
     outline: 0 none;
@@ -63,29 +64,16 @@ body {
     box-shadow: none;
 }
 
-.titlelink
+.titlelink, .titlelink:active, .titlelink:focus
 {
  background: transparent;
     border: none;
+    outline:none;
 }
 
 .submitButt
 {
     background: #b31217
-}
-
-.titlelink:active {
-border: none;
-outline:none;
-padding: 5px;
-background:url('../images/cards/go.png');
-}
-
-.titlelink:focus {
-border: none;
-outline:none;
-padding: 5px;
-background:url('../images/cards/go.png');
 }
 
 .wrong,
@@ -132,4 +120,16 @@ background:url('../images/cards/go.png');
 
 p {
     margin: 0px;   
+}
+
+.numberButton, .numberButton:active, .numberButton:focus
+{
+    background: transparent;
+    border: none;
+    outline:none;
+}
+
+.hideMe
+{
+    color: transparent;
 }

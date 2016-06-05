@@ -101,7 +101,7 @@ var main = function () {
 
 
         document.getElementById("headertag").innerHTML = (vidIDs.length - vidIDsLeft.length) + "/" + (vidIDs.length);
-        quizRound()
+        quizRound();
 
     }
 
@@ -164,18 +164,11 @@ var main = function () {
     $("#titleButton").click(function () {
         location.reload();
     })
-
-    function setColor(btn, color) {
-       // var property = document.getElementById(btn);
-       // btn.property.style.backgroundColor = color;
-        //document.getElementById(btn).style.backgroundColor = color;
-        /*
-        btn.css({
-                   "background-color": color
-        });  
-        //*/
-       //  $(this).toggleClass('red');
-    }
+    
+    $("#numberButton").click(function () {
+        $(".numberButton").toggleClass('hideMe');            
+        document.getElementById("headertag").toggleClass('hideMyShadow');
+    })
     
     function buttonPress(ind, butn) {
         var rightBtn;
@@ -223,25 +216,12 @@ var main = function () {
 
 
             setTimeout(function () {
-               // btn.style.backgroundColor = '#737373';
-              //  rightBtn.style.backgroundColor = '#737373';
-               // setColor(btn, '#737373');
-            //    setColor(rightBtn, '#737373');
+
                 
                  btn.removeClass('correct');
                 btn.removeClass('wrong');
                  rightBtn.removeClass('correct');
                 rightBtn.removeClass('wrong');
-                
-                btn.css({
-                  //   $(this).toggleClass("btn-active").siblings().removeClass("btn-active");
-                 //  "backgroundColor": '#737373'
-                });
-
-                rightBtn.css({
-                  //  $(this).toggleClass("btn-active").siblings().removeClass("btn-active");
-                  //  "backgroundColor": '#737373'
-                });
 
                 buttonPressed = false;
                 quizRound()
@@ -250,10 +230,7 @@ var main = function () {
         } else {
              btn.removeClass('correct');
              btn.removeClass('wrong');
-           // btn.style.backgroundColor = '#737373';
-            btn.css({
-               // "backgroundColor": '#737373'
-            });
+
         }
     }
 
