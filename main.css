@@ -1,5 +1,41 @@
+html, body{
+  padding: 0;
+  margin: 0;
+}
+html{
+  height: 100%;
+}
+body{
+  min-height: 100%;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 3px 3px #b31217;
+    font-size: 400%;
+    margin-bottom: 20px;
+}
+
+
 body {
-	background-color:beige
+
+    
+	background-color:#404040;
+    background: -webkit-linear-gradient(#404040, #1a1a1a
+
+); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#404040, #1a1a1a
+); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#404040, #1a1a1a
+); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#404040, #1a1a1a
+); /* Standard syntax */
+    color: white;
+    border-style:double;
+    border-width: 30px;
+    border-color: #b31217 ;
+    font-family: 'Raleway', sans-serif;   
+    
 }
 
 /***********************
@@ -18,13 +54,33 @@ body {
 }
 
 .btn-primary {
-    background: #0099cc;
+    background: #737373;
     color: #ffffff;
 }
 
 .btn-primary:active, .btn-primary.active {
-    background: #007299;
+    background: #595959;
     box-shadow: none;
+}
+
+.titlelink
+{
+ background: transparent;
+    border: none;
+}
+
+.titlelink:active {
+border: none;
+outline:none;
+padding: 5px;
+background:url('../images/cards/go.png');
+}
+
+.titlelink:focus {
+border: none;
+outline:none;
+padding: 5px;
+background:url('../images/cards/go.png');
 }
 
 .wrong {
@@ -43,7 +99,24 @@ body {
     margin-top: 10px
 }
 
+.blank {
+
+    display:block;
+    height: 100px;
+    max-height: 100%;
+    overflow:auto;
+} 
 
 .foot {
-  margin-top: 100px;
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+  bottom: 30px;
 } 
+
+p {
+    margin: 0px;   
+}

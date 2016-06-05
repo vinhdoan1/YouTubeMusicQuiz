@@ -203,11 +203,11 @@ var main = function () {
 
             setTimeout(function () {
                 btn.css({
-                    "background": '#0099cc'
+                    "background": '#737373'
                 });
 
                 rightBtn.css({
-                    "background": '#0099cc'
+                    "background": '#737373'
                 });
 
                 buttonPressed = false;
@@ -216,7 +216,7 @@ var main = function () {
             }, 1000);
         } else {
             btn.css({
-                "background": '#0099cc'
+                "background": '#737373'
             });
         }
     }
