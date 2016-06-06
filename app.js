@@ -6,6 +6,8 @@ var main = function () {
 
     document.getElementById("vidEntered").value = localStorage.getItem("enter");
     
+    $('#musicplayer').attr('src', '');
+    
     var ytApiKey = "AIzaSyB3LFAO-suAsevvIfP4q6Zk269_j0TmXq8";
     var vidIDs = [];
     var vidTitles = [];
@@ -142,6 +144,10 @@ var main = function () {
                 }*/
 
     }
+    
+    $(window).unload(function() {
+      $('#musicplayer').attr('src', '');
+    }); 
 
     $("#submitButton").click(function () {
         var vidEnteredList = document.getElementById("vidEntered").value;
@@ -166,7 +172,7 @@ var main = function () {
     })
     
     $("#titleButton").click(function () {
-        document.getElementById('musicplayer').src='';
+        $('#musicplayer').attr('src', '');
         location.reload();
     })
     
@@ -195,9 +201,6 @@ var main = function () {
             {
                 
                 btn.addClass('wrong');
-                btn.css({
-                   // "background": '#a93b1c'
-                });
 
                 if (correctButton == 0) {
                     rightBtn = $("#buttonOne");
@@ -210,9 +213,7 @@ var main = function () {
                 }
                 
                 rightBtn.addClass('correct');
-                rightBtn.css({
-                 //   "background": '#6ed43a'
-                });
+
             }
 
             buttonPressed = true;
